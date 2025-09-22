@@ -36,6 +36,7 @@
             Availablity = new DataGridViewTextBoxColumn();
             Owner = new DataGridViewTextBoxColumn();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -88,12 +89,25 @@
             button1.TabIndex = 2;
             button1.Text = "EXIT";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(596, 363);
+            button2.Name = "button2";
+            button2.Size = new Size(128, 64);
+            button2.TabIndex = 3;
+            button2.Text = "REMOVE DOG";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // doglist
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
@@ -113,5 +127,6 @@
         private DataGridViewTextBoxColumn Availablity;
         private DataGridViewTextBoxColumn Owner;
         private Button button1;
+        private Button button2;
     }
 }

@@ -14,12 +14,40 @@ namespace GUIdogAdoption
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Register registerForm = new Register();
+            registerForm.Show();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ViewDogList_Click(object sender, EventArgs e)
+        {
+            doglist dogListForm = new doglist();
+            dogListForm.Show();
+            this.Hide();
+        }
+
+        private void AdoptDog_Click(object sender, EventArgs e)
+        {
+            adoptDog adoptDogForm = new adoptDog();
+            adoptDogForm.Show();
+            this.Hide();
+        }
+
+        private void RemoveList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            exitThankyou exitForm = new exitThankyou();
+            exitForm.Show();
+            this.Hide();
         }
     }
 }

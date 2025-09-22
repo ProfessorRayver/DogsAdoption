@@ -33,7 +33,6 @@
             RegisterDog = new Button();
             ViewDogList = new Button();
             AdoptDog = new Button();
-            RemoveList = new Button();
             Exit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -63,42 +62,35 @@
             // ViewDogList
             // 
             ViewDogList.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewDogList.Location = new Point(440, 197);
+            ViewDogList.Location = new Point(329, 280);
             ViewDogList.Name = "ViewDogList";
             ViewDogList.Size = new Size(145, 55);
             ViewDogList.TabIndex = 2;
             ViewDogList.Text = "View Dog List";
             ViewDogList.UseVisualStyleBackColor = true;
+            ViewDogList.Click += ViewDogList_Click;
             // 
             // AdoptDog
             // 
             AdoptDog.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AdoptDog.Location = new Point(217, 296);
+            AdoptDog.Location = new Point(438, 197);
             AdoptDog.Name = "AdoptDog";
             AdoptDog.Size = new Size(145, 55);
             AdoptDog.TabIndex = 3;
             AdoptDog.Text = "Adopt Dog";
             AdoptDog.UseVisualStyleBackColor = true;
-            // 
-            // RemoveList
-            // 
-            RemoveList.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RemoveList.Location = new Point(440, 296);
-            RemoveList.Name = "RemoveList";
-            RemoveList.Size = new Size(145, 55);
-            RemoveList.TabIndex = 4;
-            RemoveList.Text = "Remove List";
-            RemoveList.UseVisualStyleBackColor = true;
+            AdoptDog.Click += AdoptDog_Click;
             // 
             // Exit
             // 
             Exit.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Exit.Location = new Point(330, 373);
+            Exit.Location = new Point(329, 372);
             Exit.Name = "Exit";
             Exit.Size = new Size(145, 55);
             Exit.TabIndex = 5;
             Exit.Text = "Exit";
             Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
             // 
             // Form1
             // 
@@ -106,7 +98,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(Exit);
-            Controls.Add(RemoveList);
             Controls.Add(AdoptDog);
             Controls.Add(ViewDogList);
             Controls.Add(RegisterDog);
@@ -124,7 +115,6 @@
         private Button RegisterDog;
         private Button ViewDogList;
         private Button AdoptDog;
-        private Button RemoveList;
         private Button Exit;
     }
 }

@@ -33,10 +33,8 @@
             button1 = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -50,6 +48,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
@@ -60,6 +59,7 @@
             button1.TabIndex = 2;
             button1.Text = "EXIT";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
@@ -77,14 +77,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(225, 36);
             textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(247, 259);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(225, 36);
-            textBox3.TabIndex = 5;
             // 
             // label1
             // 
@@ -106,25 +98,16 @@
             label2.TabIndex = 8;
             label2.Text = "Breed:";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(110, 268);
-            label3.Name = "label3";
-            label3.Size = new Size(131, 18);
-            label3.TabIndex = 9;
-            label3.Text = "Adoption Day:";
-            // 
             // button2
             // 
             button2.Font = new Font("Yu Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(274, 316);
+            button2.Location = new Point(247, 266);
             button2.Name = "button2";
             button2.Size = new Size(164, 62);
             button2.TabIndex = 10;
             button2.Text = "SUBMIT";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Register
             // 
@@ -132,10 +115,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
@@ -153,10 +134,8 @@
         private Button button1;
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Button button2;
     }
 }
