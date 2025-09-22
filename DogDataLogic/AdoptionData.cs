@@ -1,36 +1,23 @@
 ﻿using System.Collections.Generic;
+using VetCommon;
 
 namespace DogDataLogic
 {
     public class AdoptionData
     {
-        public List<Dog> Dogs { get; } = new List<Dog>();
+        public List<DogCommon> Dogs { get; } = new List<DogCommon>();
 
-        public class Dog
-        {
-            public string Name { get; }
-            public string Breed { get; }
-            public string Status { get; set; }
-
-            public Dog(string name, string breed)
-            {
-                Name = name;
-                Breed = breed;
-                Status = "Available";
-            }
-        }
-
-        public void AddDog(Dog dog)
+        public void AddDog(DogCommon dog)
         {
             Dogs.Add(dog);
         }
 
-        public bool RemoveDog(string name)
+        public bool AdoptDog(string name)
         {
-            var dog = Dogs.Find(d => d.Name == name);
-            if (dog != null)
+            var dog = Dogs.Find(d => d.Name.ToLower() == name.ToLower());
+            if (dog != null && dog.Status == "Available")
             {
-                Dogs.Remove(dog);
+                dog.Status = "Adopted";
                 return true;
             }
             return false;

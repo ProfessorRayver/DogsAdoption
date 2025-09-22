@@ -9,11 +9,12 @@ class DogUI
 
         while (true)
         {
-            Console.WriteLine("\n=== Stray Dog Adoption System ===");
+            Console.WriteLine("\n=== Stray Dog Adoption System ===\n");
             Console.WriteLine("1. Add Dog");
             Console.WriteLine("2. Show Dogs");
             Console.WriteLine("3. Adopt Dog");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Remove Dog");
+            Console.WriteLine("5. Exit");
             Console.Write("Choose an option: ");
             string choice = Console.ReadLine();
 
@@ -33,11 +34,19 @@ class DogUI
             {
                 Console.Write("Enter Dog Name to Adopt: ");
                 string name = Console.ReadLine();
-                logic.AdoptDog(name);
+                Console.Write("Enter Owner Name: ");
+                string owner = Console.ReadLine();
+                logic.AdoptDog(name, owner);
             }
             else if (choice == "4")
             {
-                Console.WriteLine("Goodbye!");
+                Console.Write("Enter Dog Name to Remove: ");
+                string name = Console.ReadLine();
+                logic.RemoveDog(name);
+            }
+            else if (choice == "5")
+            {
+                Console.WriteLine("Goodbye, Thank you for visiting Rayver Adoption Center");
                 break;
             }
             else

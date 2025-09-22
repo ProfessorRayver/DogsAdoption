@@ -1,35 +1,57 @@
-﻿using System;
+﻿using VetCommon;
 
 namespace DogDataLogic
 {
     public class AdoptionLogic
     {
-        private readonly AdoptionData data = new();
+        private readonly IDogDataService data;
+
+        public AdoptionLogic()
+        {
+            // Switch here: InMemory or JsonFile
+            // data = new InMemoryDogDataService();
+            data = new JsonFileDogDataService();
+        }
 
         public void AddDog(string name, string breed)
         {
-            data.AddDog(new AdoptionData.Dog(name, breed));
-            Console.WriteLine("Dog added successfully.");
+            data.AddDog(new DogCommon { Name = name, Breed = breed });
+            Console.WriteLine($"{name} ({breed}) has been added for adoption.");
         }
 
         public void ShowDogs()
         {
-            if (data.Dogs.Count == 0)
+            var dogs = data.GetDogs();
+            if (dogs.Count == 0)
             {
-                Console.WriteLine("No dogs available.");
+                Console.WriteLine("No dogs available for adoption.");
                 return;
             }
-            foreach (var dog in data.Dogs)
+
+            Console.WriteLine("\nDogs List:");
+            foreach (var dog in dogs)
             {
-                Console.WriteLine($"{dog.Name} - {dog.Breed}");
+                Console.WriteLine($"{dog.Name} - {dog.Breed} - {dog.Status} - Owner: {dog.Owner}");
             }
         }
 
-        public void AdoptDog(string name)
+        public void AdoptDog(string name, string owner)
+        {
+            if (data.AdoptDog(name, owner))
+            {
+                Console.WriteLine($"{owner} has adopted {name}!");
+            }
+            else
+            {
+                Console.WriteLine("Dog not found or already adopted.");
+            }
+        }
+
+        public void RemoveDog(string name)
         {
             if (data.RemoveDog(name))
             {
-                Console.WriteLine($"{name} has been adopted!");
+                Console.WriteLine($"{name} has been removed from the system.");
             }
             else
             {
