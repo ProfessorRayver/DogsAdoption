@@ -34,9 +34,9 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Availablity = new DataGridViewTextBoxColumn();
-            Owner = new DataGridViewTextBoxColumn();
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -54,10 +54,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Availablity, Owner });
-            dataGridView1.Location = new Point(102, 140);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Availablity });
+            dataGridView1.Location = new Point(137, 132);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(423, 274);
+            dataGridView1.Size = new Size(344, 274);
             dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -75,11 +75,6 @@
             Availablity.HeaderText = "Availability";
             Availablity.Name = "Availablity";
             // 
-            // Owner
-            // 
-            Owner.HeaderText = "Owner";
-            Owner.Name = "Owner";
-            // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -89,7 +84,6 @@
             button1.TabIndex = 2;
             button1.Text = "EXIT";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -102,11 +96,23 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(596, 283);
+            button3.Name = "button3";
+            button3.Size = new Size(128, 64);
+            button3.TabIndex = 4;
+            button3.Text = "ADOPT DOG";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // doglist
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
@@ -122,11 +128,11 @@
 
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
+        private Button button1;
+        private Button button2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Availablity;
-        private DataGridViewTextBoxColumn Owner;
-        private Button button1;
-        private Button button2;
+        private Button button3;
     }
 }

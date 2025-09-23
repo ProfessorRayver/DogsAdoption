@@ -31,15 +31,15 @@ namespace DogDataLogic
             Console.WriteLine("\nDogs List:");
             foreach (var dog in dogs)
             {
-                Console.WriteLine($"{dog.Name} - {dog.Breed} - {dog.Status} - Owner: {dog.Owner}");
+                Console.WriteLine($"{dog.Name} - {dog.Breed} - {dog.Status}");
             }
         }
 
-        public void AdoptDog(string name, string owner)
+        public void AdoptDog(string name)
         {
-            if (data.AdoptDog(name, owner))
+            if (data.AdoptDog(name))
             {
-                Console.WriteLine($"{owner} has adopted {name}!");
+                Console.WriteLine($"{name} has been adopted!");
             }
             else
             {

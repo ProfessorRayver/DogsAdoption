@@ -11,13 +11,12 @@ namespace DogDataLogic
 
         public void AddDog(DogCommon dog) => dogs.Add(dog);
 
-        public bool AdoptDog(string name, string owner)
+        public bool AdoptDog(string name)
         {
             var dog = dogs.Find(d => d.Name.ToLower() == name.ToLower());
             if (dog != null && dog.Status == "Available")
             {
                 dog.Status = "Adopted";
-                dog.Owner = owner;
                 return true;
             }
             return false;

@@ -32,7 +32,6 @@
             pictureBox1 = new PictureBox();
             RegisterDog = new Button();
             ViewDogList = new Button();
-            AdoptDog = new Button();
             Exit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -51,7 +50,7 @@
             // RegisterDog
             // 
             RegisterDog.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RegisterDog.Location = new Point(217, 197);
+            RegisterDog.Location = new Point(329, 195);
             RegisterDog.Name = "RegisterDog";
             RegisterDog.Size = new Size(145, 55);
             RegisterDog.TabIndex = 1;
@@ -70,21 +69,10 @@
             ViewDogList.UseVisualStyleBackColor = true;
             ViewDogList.Click += ViewDogList_Click;
             // 
-            // AdoptDog
-            // 
-            AdoptDog.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AdoptDog.Location = new Point(438, 197);
-            AdoptDog.Name = "AdoptDog";
-            AdoptDog.Size = new Size(145, 55);
-            AdoptDog.TabIndex = 3;
-            AdoptDog.Text = "Adopt Dog";
-            AdoptDog.UseVisualStyleBackColor = true;
-            AdoptDog.Click += AdoptDog_Click;
-            // 
             // Exit
             // 
             Exit.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Exit.Location = new Point(329, 372);
+            Exit.Location = new Point(329, 363);
             Exit.Name = "Exit";
             Exit.Size = new Size(145, 55);
             Exit.TabIndex = 5;
@@ -98,7 +86,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(Exit);
-            Controls.Add(AdoptDog);
             Controls.Add(ViewDogList);
             Controls.Add(RegisterDog);
             Controls.Add(pictureBox1);
@@ -114,7 +101,6 @@
         private PictureBox pictureBox1;
         private Button RegisterDog;
         private Button ViewDogList;
-        private Button AdoptDog;
         private Button Exit;
     }
 }

@@ -34,9 +34,7 @@ class DogUI
             {
                 Console.Write("Enter Dog Name to Adopt: ");
                 string name = Console.ReadLine();
-                Console.Write("Enter Owner Name: ");
-                string owner = Console.ReadLine();
-                logic.AdoptDog(name, owner);
+                logic.AdoptDog(name);
             }
             else if (choice == "4")
             {

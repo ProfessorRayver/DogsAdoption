@@ -7,7 +7,7 @@ namespace DogDataLogic
     {
         List<DogCommon> GetDogs();
         void AddDog(DogCommon dog);
-        bool AdoptDog(string name, string owner);
+        bool AdoptDog(string name);
         bool RemoveDog(string name);
     }
 }

@@ -31,13 +31,7 @@ namespace GUIdogAdoption
             this.Hide();
         }
 
-        private void AdoptDog_Click(object sender, EventArgs e)
-        {
-            adoptDog adoptDogForm = new adoptDog();
-            adoptDogForm.Show();
-            this.Hide();
-        }
-
+        
         private void RemoveList_Click(object sender, EventArgs e)
         {
 

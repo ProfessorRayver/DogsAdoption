@@ -7,8 +7,8 @@ namespace DogDataLogic
 {
     public class JsonFileDogDataService : IDogDataService
     {
-        private static string filePath = "dogs.json";
-        private List<DogCommon> dogs = new List<DogCommon>();
+        public static string filePath = "dogs.json";
+        public List<DogCommon> dogs = new List<DogCommon>();
 
         public JsonFileDogDataService()
         {
@@ -24,7 +24,7 @@ namespace DogDataLogic
             }
         }
 
-        private void SaveToFile()
+        public void SaveToFile()
         {
             string json = JsonSerializer.Serialize(dogs, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
@@ -38,13 +38,12 @@ namespace DogDataLogic
             SaveToFile();
         }
 
-        public bool AdoptDog(string name, string owner)
+        public bool AdoptDog(string name)
         {
             var dog = dogs.Find(d => d.Name.ToLower() == name.ToLower());
             if (dog != null && dog.Status == "Available")
             {
                 dog.Status = "Adopted";
-                dog.Owner = owner;
                 SaveToFile();
                 return true;
             }

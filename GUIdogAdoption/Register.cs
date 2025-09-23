@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VetCommon;
 
@@ -16,16 +9,6 @@ namespace GUIdogAdoption
         public Register()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,15 +29,13 @@ namespace GUIdogAdoption
                 return;
             }
 
-            // Add to shared in-memory data service
-            adoptDog.dataService.AddDog(new DogCommon { Name = name, Breed = breed });
+            // Add to shared JSON data service
+            DataServiceProvider.DogDataService.AddDog(new DogCommon { Name = name, Breed = breed, Status = "Available" });
 
             MessageBox.Show($"{name} ({breed}) has been registered for adoption.", "Registration Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Optionally clear the fields
             textBox1.Text = "";
             textBox2.Text = "";
         }
     }
-
-} 
+}
