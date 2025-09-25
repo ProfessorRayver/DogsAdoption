@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using VetCommon;
+using DogDataLogic;
 
 namespace GUIdogAdoption
 {
     public partial class Register : Form
     {
+        // Use JSON file as the data service
+        private static JsonFileDogDataService dataService = new JsonFileDogDataService();
+
         public Register()
         {
             InitializeComponent();
@@ -29,8 +33,16 @@ namespace GUIdogAdoption
                 return;
             }
 
-            // Add to shared JSON data service
-            DataServiceProvider.DogDataService.AddDog(new DogCommon { Name = name, Breed = breed, Status = "Available" });
+            dataService.AddDog(new DogCommon { Name = name, Breed = breed, Status = "Available" });
+
+            // Refresh doglist if open
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is doglist dogListForm)
+                {
+                    dogListForm.RefreshDogList();
+                }
+            }
 
             MessageBox.Show($"{name} ({breed}) has been registered for adoption.", "Registration Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
